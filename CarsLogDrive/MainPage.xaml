@@ -1,14 +1,58 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="CarsLogDrive.MainPage">
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="CarsLogDrive.MainPage">
 
     <ContentPage.Content>
-        <Label Text="Welcome to CarsLogDrive!"
-               VerticalOptions="Center"
-               BackgroundColor="Aqua"
-               TextColor="Black"
-               HorizontalOptions="Center" />
+        <VerticalStackLayout Padding="30" Spacing="20" BackgroundColor="#F5F5F5">
+
+            <Label Text="🚗 CarsLogApp 🚗"
+                   FontSize="32"
+                   FontAttributes="Bold"
+                   TextColor="#2B2B2B"
+                   HorizontalOptions="Center" />
+
+            <Label Text="Додати новий автомобіль у гараж"
+                   FontSize="16"
+                   TextColor="Gray"
+                   HorizontalOptions="Center" />
+
+            <Frame CornerRadius="15" HasShadow="True" Padding="15" BackgroundColor="White">
+                <VerticalStackLayout Spacing="10">
+
+                    <Entry x:Name="CarNameEntry" 
+                           Placeholder="Марка та модель (напр. Audi A4)" 
+                           PlaceholderColor="LightGray"
+                           TextColor="Black" />
+
+                    <Entry x:Name="PlateNumberEntry" 
+                           Placeholder="Державний номер" 
+                           PlaceholderColor="LightGray"
+                           TextColor="Black" />
+
+                    <Entry x:Name="MileageEntry" 
+                           Placeholder="Поточний пробіг (км)" 
+                           Keyboard="Numeric"
+                           PlaceholderColor="LightGray"
+                           TextColor="Black" />
+
+                    <Button Text="Додати в гараж"
+                            BackgroundColor="SteelBlue"
+                            TextColor="White"
+                            CornerRadius="10"
+                            HeightRequest="50"
+                            Margin="0,10,0,0" />
+                </VerticalStackLayout>
+            </Frame>
+
+            <Label Text="Ваш цифровий гараж:" 
+                   FontAttributes="Bold" 
+                   Margin="0,20,0,0" />
+
+            <BoxView HeightRequest="1" Color="Silver" />
+
+        </VerticalStackLayout>
     </ContentPage.Content>
 
 </ContentPage>
