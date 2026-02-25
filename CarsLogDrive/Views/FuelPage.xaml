@@ -2,16 +2,81 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CarsLogDrive.Views.FuelPage"
-             Title="FuelPage">
-    <VerticalStackLayout Padding="30" Spacing="20">
-        <Label Text="⛽ Облік палива"
-           FontSize="24"
-           FontAttributes="Bold"
-           HorizontalOptions="Center" />
+             Title="Заправка"
+             BackgroundColor="#F8F9FA">
 
-        <Label Text="Тут буде введення даних після АЗС"
-           FontSize="14"
-           TextColor="Gray"
-           HorizontalOptions="Center" />
-    </VerticalStackLayout>
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="20">
+
+            <Label Text="⛽ Нова заправка" 
+                   FontSize="28" 
+                   FontAttributes="Bold" 
+                   TextColor="#007BFF" 
+                   HorizontalOptions="Center" 
+                   Margin="0,10" />
+
+            <Border Stroke="#00D2FF" 
+                    StrokeThickness="2" 
+                    StrokeShape="RoundRectangle 20" 
+                    Padding="20" 
+                    BackgroundColor="White">
+
+                <VerticalStackLayout Spacing="15">
+
+                    <Label Text="Дані з чека" 
+                           FontAttributes="Bold" 
+                           TextColor="Gray" 
+                           FontSize="14" />
+
+                    <Entry x:Name="FuelAmountEntry" 
+                           Placeholder="Кількість літрів (л)" 
+                           Keyboard="Numeric" 
+                           PlaceholderColor="Silver"
+                           TextColor="Black" />
+
+                    <Entry x:Name="FuelPriceEntry" 
+                           Placeholder="Ціна за 1 літр (грн)" 
+                           Keyboard="Numeric" 
+                           PlaceholderColor="Silver"
+                           TextColor="Black" />
+
+                    <Entry x:Name="CurrentMileageEntry" 
+                           Placeholder="Поточний пробіг авто" 
+                           Keyboard="Numeric" 
+                           PlaceholderColor="Silver"
+                           TextColor="Black" />
+
+                    <Button Text="Зберегти дані" 
+                            Clicked="OnSaveFuelClicked"
+                            BackgroundColor="#28A745"
+                            TextColor="White"
+                            CornerRadius="25"
+                            HeightRequest="55"
+                            FontAttributes="Bold"
+                            Margin="0,10,0,0" />
+                </VerticalStackLayout>
+            </Border>
+
+            <Border x:Name="ResultFrame" 
+                    IsVisible="False" 
+                    Stroke="#28A745" 
+                    StrokeThickness="1"
+                    StrokeShape="RoundRectangle 20" 
+                    Padding="15"
+                    BackgroundColor="#E8F5E9">
+
+                <VerticalStackLayout HorizontalOptions="Center">
+                    <Label x:Name="TotalCostLabel" 
+                           FontSize="18" 
+                           FontAttributes="Bold" 
+                           TextColor="#28A745" />
+                    <Label Text="Дані успішно додані до аналітики" 
+                           FontSize="12" 
+                           TextColor="Gray" 
+                           HorizontalOptions="Center" />
+                </VerticalStackLayout>
+            </Border>
+
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>

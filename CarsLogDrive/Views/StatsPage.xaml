@@ -2,21 +2,58 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CarsLogDrive.Views.StatsPage"
-             Title="Статистика">
-    <VerticalStackLayout Padding="30" Spacing="15">
-        <Label Text="📊 Фінансова аналітика"
-               FontSize="24"
-               FontAttributes="Bold"
-               HorizontalOptions="Center" />
+             Title="Статистика"
+             BackgroundColor="#F8F9FA">
 
-        <Frame BackgroundColor="#E3F2FD" CornerRadius="10">
-            <Label Text="Паливо/Ремонт" 
-                   TextColor="#1976D2"
-                   HorizontalOptions="Center" />
-        </Frame>
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15">
 
-        <Label Text="Вартість 1 км пробігу: ***** грн" 
-               FontSize="18" 
-               Margin="0,20,0,0" />
-    </VerticalStackLayout>
+            <Label Text="📊 Аналітика витрат" 
+                   FontSize="28" 
+                   FontAttributes="Bold" 
+                   TextColor="#007BFF" 
+                   HorizontalOptions="Center" 
+                   Margin="0,10" />
+
+            <Border Stroke="#00D2FF" StrokeThickness="2" StrokeShape="RoundRectangle 25" BackgroundColor="White" Padding="20">
+                <VerticalStackLayout HorizontalOptions="Center" Spacing="5">
+                    <Label Text="Вартість 1 км" FontSize="14" TextColor="Gray" HorizontalOptions="Center" />
+                    <Label x:Name="CostPerKmLabel" Text="0.00 грн" FontSize="36" FontAttributes="Bold" TextColor="#28A745" />
+                </VerticalStackLayout>
+            </Border>
+
+            <Grid ColumnDefinitions="*,*" RowDefinitions="Auto,Auto" ColumnSpacing="15" RowSpacing="15">
+
+                <Border Grid.Row="0" Grid.Column="0" StrokeShape="RoundRectangle 20" Padding="15" BackgroundColor="White">
+                    <VerticalStackLayout>
+                        <Label Text="⛽ Паливо" FontSize="12" TextColor="Gray" />
+                        <Label x:Name="TotalFuelLabel" Text="0 грн" FontSize="18" FontAttributes="Bold" />
+                    </VerticalStackLayout>
+                </Border>
+
+                <Border Grid.Row="0" Grid.Column="1" StrokeShape="RoundRectangle 20" Padding="15" BackgroundColor="White">
+                    <VerticalStackLayout>
+                        <Label Text="🛠 Сервіс" FontSize="12" TextColor="Gray" />
+                        <Label x:Name="TotalServiceLabel" Text="0 грн" FontSize="18" FontAttributes="Bold" />
+                    </VerticalStackLayout>
+                </Border>
+
+                <Border Grid.Row="1" Grid.ColumnSpan="2" StrokeShape="RoundRectangle 20" Padding="15" BackgroundColor="#007BFF">
+                    <HorizontalStackLayout Spacing="20" HorizontalOptions="Center">
+                        <Label Text="Загальний пробіг:" TextColor="White" VerticalOptions="Center" />
+                        <Label x:Name="TotalMileageLabel" Text="0 км" FontSize="20" FontAttributes="Bold" TextColor="White" />
+                    </HorizontalStackLayout>
+                </Border>
+            </Grid>
+
+            <Button Text="Оновити дані" 
+                    Clicked="OnRefreshStatsClicked"
+                    BackgroundColor="#007BFF"
+                    TextColor="White"
+                    CornerRadius="25"
+                    HeightRequest="50"
+                    Margin="0,10" />
+
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>
