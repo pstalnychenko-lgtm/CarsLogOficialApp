@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CarsLogDrive.Views.StatsPage"
+             Title="Статистика">
+    <VerticalStackLayout Padding="30" Spacing="15">
+        <Label Text="📊 Фінансова аналітика"
+               FontSize="24"
+               FontAttributes="Bold"
+               HorizontalOptions="Center" />
+
+        <Frame BackgroundColor="#E3F2FD" CornerRadius="10">
+            <Label Text="Паливо/Ремонт" 
+                   TextColor="#1976D2"
+                   HorizontalOptions="Center" />
+        </Frame>
+
+        <Label Text="Вартість 1 км пробігу: ***** грн" 
+               FontSize="18" 
+               Margin="0,20,0,0" />
+    </VerticalStackLayout>
+</ContentPage>

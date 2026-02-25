@@ -4,11 +4,31 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:CarsLogDrive"
+    xmlns:views="clr-namespace:CarsLogDrive.Views"
+    Shell.FlyoutBehavior="Disabled"
     Title="CarsLogDrive">
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+    <TabBar>
+        <Tab Title="Гараж" Icon="dotnet_bot.svg">
+            <ShellContent
+                Title="Головна"
+                ContentTemplate="{DataTemplate local:MainPage}"
+                Route="MainPage" />
+        </Tab>
+
+        <Tab Title="Паливо" Icon="dotnet_bot.svg">
+            <ShellContent
+                Title="Облік палива"
+                ContentTemplate="{DataTemplate views:FuelPage}"
+                Route="FuelPage" />
+        </Tab>
+
+        <Tab Title="Статистика" Icon="dotnet_bot.svg">
+            <ShellContent
+                Title="Аналітика"
+                ContentTemplate="{DataTemplate views:StatsPage}"
+                Route="StatsPage" />
+        </Tab>
+    </TabBar>
 
 </Shell>
