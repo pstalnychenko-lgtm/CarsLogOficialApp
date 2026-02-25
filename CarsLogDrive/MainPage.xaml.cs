@@ -7,7 +7,10 @@ namespace CarsLogDrive
 {
     public partial class MainPage : ContentPage
     {
-        // Backing fields for XAML controls (use FindByName in constructor)
+       
+        //Резервні поля для елементів керування XAML(використання FindByName у конструкторі)       
+        
+            
         private Entry _carNameEntry;
         private Entry _plateNumberEntry;
         private Entry _mileageEntry;

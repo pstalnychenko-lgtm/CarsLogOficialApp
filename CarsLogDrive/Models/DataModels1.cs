@@ -16,7 +16,6 @@ namespace CarsLogApp.Models
     {
         public string FullName { get; set; } // Повне імєя
         public string LicenseCategory { get; set; } //Категорія водія (A , B , С , D ...)
-        public DateTime LicenseExpiryDate { get; set; } //Дата закінчення терміну дії ліцензії
         public bool MedicalCertStatus { get; set; } // Медичний стан
     }
 
