@@ -1,4 +1,4 @@
-﻿using CarsLogApp.Models;
+﻿using CarsLogWorkig.Models;
 using Microsoft.Maui.Controls;
 using Microsoft.Maui.Controls.Shapes;
 using System.Diagnostics;
@@ -52,7 +52,7 @@ namespace CarsLogDrive
                 _garageListContainer?.Children.Clear();
 
                 // Створення об'єкта автомобіля
-                var newVehicle = new Vehicle
+                var newVehicle = new Vehicle1
                 {
                     Brand = _carNameEntry.Text,
                     PlateNumber = _plateNumberEntry.Text,
